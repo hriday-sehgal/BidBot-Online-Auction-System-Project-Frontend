@@ -13,7 +13,7 @@ const SignupPage = ({ darkMode }) => {
   
     const obj = { username, email, password };
     console.log(obj);
-    const url = "http://localhost:5500/api/signup";
+    const url = "https://backend-online-auction-system-mern.onrender.com/api/signup";
   
     try {
       const res = await axios.post(url, obj);
@@ -34,7 +34,7 @@ const SignupPage = ({ darkMode }) => {
 
   // Function to send a welcome email
   const sendWelcomeEmail = async (userEmail) => {
-    const welcomeEmailUrl = "http://localhost:5500/api/sendWelcomeEmail"; // Create this endpoint on your server
+    const welcomeEmailUrl = "https://backend-online-auction-system-mern.onrender.com/api/sendWelcomeEmail"; // Create this endpoint on your server
 
     try {
       await axios.post(welcomeEmailUrl, { email: userEmail });

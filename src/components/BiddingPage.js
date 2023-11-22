@@ -23,7 +23,7 @@ const BiddingPage = ({ darkMode }) => {
   // Fetch products from the server when the component mounts
   const fetchProducts = async () => {
     try {
-      const response = await axios.get(`http://localhost:5500/api/getBids?userId=${userId}`);
+      const response = await axios.get(`https://backend-online-auction-system-mern.onrender.com/api/getBids?userId=${userId}`);
       setProducts(response.data.bids);
     } catch (error) {
       console.error('Error fetching bids:', error);
@@ -67,7 +67,7 @@ const BiddingPage = ({ darkMode }) => {
       }
   
       try {
-        const response = await axios.post('http://localhost:5500/api/addBid', {
+        const response = await axios.post('https://backend-online-auction-system-mern.onrender.com/api/addBid', {
           ...newProduct,
           userId,
           currentBid: numericCurrentBid || numericStartingBid, // Set currentBid to startingBid if not provided
@@ -97,7 +97,7 @@ const BiddingPage = ({ darkMode }) => {
   const handleDeleteProduct = async (productId) => {
     if (loggedIn) {
       try {
-        const response = await axios.delete(`http://localhost:5500/api/deleteBid/${productId}`);
+        const response = await axios.delete(`https://backend-online-auction-system-mern.onrender.com/api/deleteBid/${productId}`);
         if (response.status === 200) {
           alert('Bid deleted successfully');
           // Update state immediately after successful deletion
@@ -123,7 +123,7 @@ const BiddingPage = ({ darkMode }) => {
 
   const handleConfirmModifyBid = (productId, newBid) => {
     axios
-      .put(`http://localhost:5500/api/modifyBid/${productId}`, {
+      .put(`https://backend-online-auction-system-mern.onrender.com/api/modifyBid/${productId}`, {
         newBid,
         currentBid: bidAmount, // Pass the currentBid along with newBid
       })
@@ -168,7 +168,7 @@ const BiddingPage = ({ darkMode }) => {
     }
 
     axios
-      .post('http://localhost:5500/api/placeBid', {
+      .post('https://backend-online-auction-system-mern.onrender.com/api/placeBid', {
         productId,
         userId: userId, // Use userId from useAuth
         bidAmount,

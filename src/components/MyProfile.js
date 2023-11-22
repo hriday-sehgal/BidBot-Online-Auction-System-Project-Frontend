@@ -17,17 +17,17 @@ const MyProfile = ({ darkMode, email }) => {
  useEffect(() => {
    const fetchProfileStatistics = async () => {
      try {
-       const bidsResponse = await axios.get(`http://localhost:5500/api/getTotalBids/${userId}`);
+       const bidsResponse = await axios.get(`https://backend-online-auction-system-mern.onrender.com/api/getTotalBids/${userId}`);
        setTotalBids(bidsResponse.data.totalBids);
 
-       const productsResponse = await axios.get(`http://localhost:5500/api/getTotalProducts/${userId}`);
+       const productsResponse = await axios.get(`https://backend-online-auction-system-mern.onrender.com/api/getTotalProducts/${userId}`);
        setTotalProducts(productsResponse.data.totalProducts);
 
-       const winningBidsResponse = await axios.get(`http://localhost:5500/api/getWinningBids/${userId}`);
+       const winningBidsResponse = await axios.get(`https://backend-online-auction-system-mern.onrender.com/api/getWinningBids/${userId}`);
        setWinningBids(winningBidsResponse.data.winningBids);
 
 
-       const userBidsResponse = await axios.get(`http://localhost:5500/api/getUserBids/${userId}`);
+       const userBidsResponse = await axios.get(`https://backend-online-auction-system-mern.onrender.com/api/getUserBids/${userId}`);
        const userBids = userBidsResponse.data.userBids;
        
        // Calculate average bid amount

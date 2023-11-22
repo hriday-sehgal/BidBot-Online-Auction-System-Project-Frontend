@@ -16,7 +16,7 @@ const LoginPage = ({ darkMode }) => {
     e.preventDefault();
   
     try {
-      const response = await axios.post('http://localhost:5500/api/login', {
+      const response = await axios.post('https://backend-online-auction-system-mern.onrender.com/api/login', {
         email,
         password
       });
@@ -34,7 +34,7 @@ const LoginPage = ({ darkMode }) => {
         localStorage.setItem('username', response.data.username); // Set username in local storage
 
         // Fetch user bids on login
-      const userBidsResponse = await axios.get(`http://localhost:5500/api/getUserBids/${email}`);
+      const userBidsResponse = await axios.get(`https://backend-online-auction-system-mern.onrender.com/api/getUserBids/${email}`);
       console.log('User Bids:', userBidsResponse.data.userBids);
       
       // Set user bids in the context state
@@ -64,7 +64,7 @@ const LoginPage = ({ darkMode }) => {
 
 const handleForgotPassword = async () => {
   try {
-    const response = await axios.post('http://localhost:5500/api/forgotPassword', { email });
+    const response = await axios.post('https://backend-online-auction-system-mern.onrender.com/api/forgotPassword', { email });
 
     if (response.data.message === 'Email sent successfully') {
       alert('An email with the new password has been sent to your email address.');

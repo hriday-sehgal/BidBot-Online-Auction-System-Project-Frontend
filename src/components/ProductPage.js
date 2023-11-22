@@ -26,7 +26,7 @@ const ProductsPage = ({ darkMode, email }) => {
     // Fetch winning user details
 const fetchWinningUser = async (productId) => {
   try {
-    const winningUserResponse = await axios.get(`http://localhost:5500/api/getWinningBid/${productId}`);
+    const winningUserResponse = await axios.get(`https://backend-online-auction-system-mern.onrender.com/api/getWinningBid/${productId}`);
     setWinningUsers((prevWinningUsers) => ({
       ...prevWinningUsers,
       [productId]: winningUserResponse.data.winningBid.userId,
@@ -41,13 +41,13 @@ const fetchWinningUser = async (productId) => {
     // Fetch products from MongoDB database when the component mounts
     const fetchProducts = async () => {
       try {
-        const response = await axios.get('http://localhost:5500/api/getBids');
+        const response = await axios.get('https://backend-online-auction-system-mern.onrender.com/api/getBids');
         setProducts(response.data.bids);
         console.log('Products:', response.data.bids);
         
         // Call fetchWinningUser for each product
         const winningUserPromises = response.data.bids.map(async (product) => {
-          const winningUserResponse = await axios.get(`http://localhost:5500/api/getWinningBid/${product._id}`);
+          const winningUserResponse = await axios.get(`https://backend-online-auction-system-mern.onrender.com/api/getWinningBid/${product._id}`);
           return { productId: product._id, userId: winningUserResponse.data.winningBid.userId };
         });
   
@@ -77,7 +77,7 @@ const fetchWinningUser = async (productId) => {
         // Check if email exists before making the API call
       if (userId){
         //const timestamp = new Date().getTime();
-        const userBidsResponse = await axios.get(`http://localhost:5500/api/getUserBids/${userId}`);
+        const userBidsResponse = await axios.get(`https://backend-online-auction-system-mern.onrender.com/api/getUserBids/${userId}`);
         console.log('User Bids:', userBidsResponse.data.userBids);
         console.log('User Bids Response:', userBidsResponse);
         setUserBids(userBidsResponse.data.userBids);
@@ -210,7 +210,7 @@ const fetchWinningUser = async (productId) => {
         return;
       }
   
-      const response = await axios.post('http://localhost:5500/api/placeBid', {
+      const response = await axios.post('https://backend-online-auction-system-mern.onrender.com/api/placeBid', {
         productId: selectedProduct.productId,
         userId:userId,// Use userId consistently
         bidAmount: Number(bidAmount),
@@ -231,11 +231,11 @@ const fetchWinningUser = async (productId) => {
         console.log('Updated Products:', updatedProducts);
   
         // Fetch user bids after placing a bid
-      const updatedUserBidsResponse = await axios.get(`http://localhost:5500/api/getUserBids/${userId}`);
+      const updatedUserBidsResponse = await axios.get(`https://backend-online-auction-system-mern.onrender.com/api/getUserBids/${userId}`);
       setUserBids(updatedUserBidsResponse.data.userBids);
 
       // Update the bid for the product
-      const updatedProductResponse = await axios.get(`http://localhost:5500/api/getBids/${selectedProduct.productId}`);
+      const updatedProductResponse = await axios.get(`https://backend-online-auction-system-mern.onrender.com/api/getBids/${selectedProduct.productId}`);
       const updatedProduct = updatedProductResponse.data.bids[0];
 
       if (!updatedProduct) {
@@ -264,7 +264,7 @@ const fetchWinningUser = async (productId) => {
   
   const handleConfirmModifyBid = async (productId, newBid) => {
     try {
-      const res = await axios.put(`http://localhost:5500/api/modifyBid/${productId}`, {
+      const res = await axios.put(`https://backend-online-auction-system-mern.onrender.com/api/modifyBid/${productId}`, {
         newBid,
       });
   
@@ -278,7 +278,7 @@ const fetchWinningUser = async (productId) => {
         setModifyProductId(null);
   
         // Fetch user bids after modifying a bid
-        const updatedUserBidsResponse = await axios.get(`http://localhost:5500/api/getUserBids/${userId}`);
+        const updatedUserBidsResponse = await axios.get(`https://backend-online-auction-system-mern.onrender.com/api/getUserBids/${userId}`);
         setUserBids(updatedUserBidsResponse.data.userBids);
       } else {
         console.error('Failed to modify bid');
