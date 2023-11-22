@@ -1,0 +1,96 @@
+/* ProductsPage.css */
+
+
+
+.products-page {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+  }
+  
+  .product {
+    max-width: 300px;
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    text-align: center;
+    
+  }
+
+
+  
+  .product h2 {
+    margin-top: 10px;
+    font-size: 1.5rem;
+  }
+  
+  .product p {
+    margin-top: 5px;
+    font-size: 1rem;
+    
+  }
+  
+  .product input {
+    width: 80px;
+    padding: 5px;
+    margin-top: 10px;
+    font-size: 1rem;
+  
+  }
+  
+  .product button {
+    display: block;
+    margin: 10px auto;
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .product button:hover {
+    background-color: #0056b3;
+  }
+
+  .product .btn-view-bids {
+    margin-top: 100px; /* Adjust the margin as needed */
+    margin-right: 100px; /* Adjust the margin as needed */
+    
+  }
+  
+  .modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  .modal-dialog {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+  }
+  
+  .modal-title {
+    margin-bottom: 0;
+  }
+  
+  /* Responsive styling for smaller screens */
+  @media (max-width: 768px) {
+    .modal-dialog {
+      width: 90%;
+      max-width: 90%;
+    }
+  }

@@ -1,0 +1,34 @@
+.main .row{
+    display: flex;
+    align-items: center;
+    width: 60%;
+    margin: auto;
+}
+
+.key-feat .display-4{
+    text-align:center;
+}
+
+.key-feat .row{
+    display: flex;
+    align-items: center;
+    width: 60%;
+    margin: auto;   
+    margin-top: 30px;
+}
+
+.buttons .row{
+    display: flex;
+    align-items: center;
+    width: 60%;
+    margin: auto; 
+}
+
+.win .row{
+    display: flex;
+    align-items: center;
+    width: 60%;
+    margin: auto; 
+    justify-content: center;
+}
+

@@ -1,0 +1,84 @@
+/* Bidding.css */
+
+.bidding-page {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    
+  }
+  
+  h2 {
+    margin-bottom: 10px;
+  }
+  
+  div {
+    margin-bottom: 10px;
+  }
+  
+  label {
+    display: block;
+    font-weight: bold;
+  }
+  
+  input {
+    width: 100%;
+    padding: 8px;
+    font-size: 1rem;
+  }
+  
+  button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  .product {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .product h3 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+  }
+  
+  .product p {
+    font-size: 1rem;
+    margin-bottom: 5px;
+  }
+  
+  .product input {
+    width: 80px;
+    padding: 5px;
+    font-size: 1rem;
+  }
+  
+  .product button {
+    font-size: 1rem;
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .product button:hover {
+    background-color: #c82333;
+  }
+  
+  .product {
+    position: relative;
+  }
+  
+
+  
