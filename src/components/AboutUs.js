@@ -9,7 +9,6 @@ const AboutUs = ({ darkMode }) => {
     { name: 'Sanskar Sinha', roll: '21BCG10110', linkedin: 'www.linkedin.com/in/sanskar-sinha/' },
   ];
 
-  const githubLink = 'https://github.com/hriday-sehgal/BidBot-Online-Auction-System-Project-Frontend';
 
   return (
     <div className={`container mt-5 ${darkMode ? 'dark-mode' : ''}`}>
@@ -46,12 +45,7 @@ const AboutUs = ({ darkMode }) => {
           </div>
 
 
-          <p className={`mt-3 ${darkMode ? 'text-light' : ''}`}>
-            See the project code on GitHub:{' '}
-            <a href={githubLink} target="_blank" rel="noopener noreferrer">
-              GitHub Repository
-            </a>
-          </p>
+     
         </div>
       </div>
     </div>
