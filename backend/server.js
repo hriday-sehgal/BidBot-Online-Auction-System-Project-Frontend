@@ -1,15 +1,17 @@
+require('dotenv').config();
+
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require("cors");
 const bodyParser = require('body-parser');
-const nodemailer = require('nodemailer'); // Add this line
+const nodemailer = require('nodemailer'); 
 const bcrypt = require('bcrypt');
 const crypto = require('crypto');
 
 const app = express();
 mongoose.set("strictQuery", true)
 // Connect to MongoDB (replace this URI with your actual MongoDB URI)
-mongoose.connect("mongodb+srv://hridaysehgal:hriday@cluster0.wv5erkl.mongodb.net/School", { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true });
 
 mongoose.connection.on('connected', () => {
   console.log('Connected to MongoDB');
@@ -38,8 +40,8 @@ app.use((req, res, next) => {
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: 'kidsycartoons@gmail.com', // Your Gmail email address
-    pass: 'saixgdpmmmdeyufv', // Use the generated app password here //this password is fake generated dont use for real purposes it wont work
+    user: 'process.env.EMAIL_USER', // Some fake encrypted Gmail email address
+    pass: 'process.env.EMAIL_PASSWORD',  // Some fake Encrypted Password
   },
 });
 
