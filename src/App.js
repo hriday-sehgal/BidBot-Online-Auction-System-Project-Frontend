@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-route
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import './App.css'; // Add this line for general styles
+import ReactGA from 'react-ga4';
 import HomePage from './components/HomePage';
 import { AuthProvider, useAuth } from './components/AuthContext';
 import LoginPage from './components/LoginPage';
@@ -20,9 +21,7 @@ const AnalyticsTracker = () => {
   const location = useLocation();
   
   useEffect(() => {
-    window.gtag('config', 'G-31EWNSNQEZ', {
-      page_path: location.pathname,
-    });
+    ReactGA.send({ hitType: 'pageview', page: location.pathname });
   }, [location]);
 
   return null;
@@ -31,7 +30,7 @@ const AnalyticsTracker = () => {
 const App = () => {
   const [darkMode, setDarkMode] = useState(false);
   const { email } = useAuth(); // Get the user's email from useAuth
-
+  ReactGA.initialize('G-31EWNSNQEZ');
 
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
