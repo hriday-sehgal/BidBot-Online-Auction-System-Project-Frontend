@@ -21,7 +21,9 @@ const AnalyticsTracker = () => {
   const location = useLocation();
   
   useEffect(() => {
-    ReactGA.send({ hitType: 'pageview', page: location.pathname });
+    window.gtag('config', 'G-31EWNSNQEZ', {
+      page_path: location.pathname,
+    });
   }, [location]);
 
   return null;
