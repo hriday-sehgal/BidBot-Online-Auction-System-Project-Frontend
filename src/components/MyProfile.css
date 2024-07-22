@@ -1,0 +1,30 @@
+/* MyProfile.css */
+
+/* Use a more specific class or ID for styles */
+.my-profile-container {
+    margin: 0 auto;
+    max-width: 800px; /* Adjust as needed */
+    
+  }
+  
+  .my-profile-card {
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 50px;
+    padding: 20px;
+  }
+  
+  .my-profile-btn-primary {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .my-profile-btn-primary:hover {
+    background-color: #0056b3;
+  }
+  

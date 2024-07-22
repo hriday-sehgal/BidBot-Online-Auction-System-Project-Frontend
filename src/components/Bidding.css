@@ -1,0 +1,147 @@
+/* Bidding.css */
+
+/* Default styles */
+.bidding-page {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h2 {
+  margin-bottom: 10px;
+}
+
+div {
+  margin-bottom: 10px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Product Styles */
+.product {
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.product h3 {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+
+.product p {
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+
+.product input {
+  width: 80px;
+  padding: 5px;
+  font-size: 1rem;
+}
+
+.product .buttons {
+  display: flex;
+  gap: 10px; /* Add space between buttons */
+}
+
+.product button.modify {
+  background-color: #ffc107;
+  color: #212529;
+}
+
+.product button.modify:hover {
+  background-color: #e0a800;
+}
+
+.product button.delete {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.product button.delete:hover {
+  background-color: #c82333;
+}
+
+.product .modify-bid-container {
+  margin-top: 10px; /* Space above the modify bid section */
+}
+
+.product .modify-bid-container input {
+  width: 100%; /* Make the input field span full width */
+  margin-bottom: 10px; /* Space below the input field */
+}
+
+.product .modify-bid-container button {
+  margin-right: 10px; /* Space between buttons */
+}
+
+.product .modify-bid-container button:last-of-type {
+  margin-right: 0; /* Remove right margin from the last button */
+}
+
+/* Dark mode styles */
+.bidding-page.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+.bidding-page.dark-mode .product {
+  background-color: #1e1e1e;
+  border-color: #333;
+}
+
+.bidding-page.dark-mode .product p,
+.bidding-page.dark-mode .product h3 {
+  color: #e0e0e0;
+}
+
+.bidding-page.dark-mode button {
+  background-color: #333;
+  color: #e0e0e0;
+}
+
+.bidding-page.dark-mode button:hover {
+  background-color: #555;
+}
+
+.bidding-page.dark-mode .product button.modify {
+  background-color: #ffca28;
+  color: #212529;
+}
+
+.bidding-page.dark-mode .product button.delete {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.bidding-page.dark-mode .product button.modify:hover {
+  background-color: #e0a800;
+}
