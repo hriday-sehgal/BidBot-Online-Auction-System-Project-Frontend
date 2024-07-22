@@ -22,7 +22,7 @@ mongoose.connection.on('error', (err) => {
 });
 
 const corsOptions = {
-  origin: 'http://localhost:3000', // Replace with React app's frontend render domain when working with deployed site
+  origin: 'https://bidbotauctionsystem.onrender.com', // Replace with React app's frontend render domain when working with deployed site
   credentials: true,
 };
 app.use(express.json());
@@ -126,7 +126,7 @@ app.post('/api/forgotPassword', async (req, res) => {
 
   // Send an email with the new password
   const mailOptions = {
-    from: 'kidsycartoons@gmail.com', // Sender email address
+    from: process.env.EMAIL_USER, // Sender email address
     to: email,
     subject: 'Password Reset',
     text: 'Dear user, we have received a forgot password request for your account. Your new password is: ${newPassword} Please do not share your password with anyone. We thank you for using our Online Auction System BidBot.',
@@ -341,7 +341,7 @@ app.post('/api/placeBid', async (req, res) => {
 
      // Send email to the winning user
      const mailOptions = {
-      from: 'kidsycartoons@gmail.com',
+      from: process.env.EMAIL_USER,
       to: winningUser.userId, // Use userId as the email address
       subject: 'Congratulations! You are currently the highest bidder',
       text: 
@@ -466,7 +466,7 @@ app.post('/api/sendWelcomeEmail', async (req, res) => {
 
   // Send welcome email logic here
   const mailOptions = {
-    from: 'kidsycartoons@gmail.com',
+    from: process.env.EMAIL_USER,
     to: email,
     subject: 'Welcome to BidBot - Online Auction System',
     text: 'Dear user, Welcome to BidBot, the ultimate online auction system. Explore exciting features and start bidding on your favorite items. Thank you for choosing BidBot!',
