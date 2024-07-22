@@ -30,7 +30,12 @@ const AnalyticsTracker = () => {
 const App = () => {
   const [darkMode, setDarkMode] = useState(false);
   const { email } = useAuth(); // Get the user's email from useAuth
-  ReactGA.initialize('G-31EWNSNQEZ');
+  ReactGA.initialize('G-31EWNSNQEZ', {
+  gaOptions: {
+    cookieFlags: 'SameSite=None;Secure'
+  }
+});
+
 
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
