@@ -8,4 +8,4 @@ Copyright Hriday Sehgal 2023 All rights reserved. No part of this repository, in
 
 Unauthorized use, reproduction, distribution, or transmission of this repository's contents is strictly prohibited and may result in legal action.
 
-For inquiries regarding permissions, please contact hridaysehgal@gmail.com.
+For inquiries regarding permissions, please contact hriday.career@gmail.com.
