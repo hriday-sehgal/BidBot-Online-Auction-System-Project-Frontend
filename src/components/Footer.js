@@ -7,7 +7,7 @@ const Footer = ({ darkMode }) => {
         <div className="row">
           <div className="col-lg-12 text-center">
             <hr className={`mb-4 ${darkMode ? 'dark-hr' : ''}`} />
-            <p>&copy; 2023 Made by <a href='https://www.linkedin.com/in/hridaysehgal/' target='_blank'>Hriday Sehgal</a> All rights reserved. Thanks for visiting!</p>
+            <p>&copy; 2025 Made by <a href='https://www.linkedin.com/in/hridaysehgal/' target='_blank'>Hriday Sehgal</a> All rights reserved. Thanks for visiting!</p>
           </div>
         </div>
       </div>
